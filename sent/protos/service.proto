@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package grpcservice;
+
+// Service definition
+service ItemService {
+  // Get item by ID
+  rpc GetItem (ItemRequest) returns (ItemResponse) {}
+}
+
+// Request message containing the item ID
+message ItemRequest {
+  int32 item_id = 1;
+}
+
+// Response message containing the item data
+message ItemResponse {
+  int32 id = 1;
+  string title = 2;
+  string body = 3;
+  int32 user_id = 4;
+  string error = 5;
+} 
